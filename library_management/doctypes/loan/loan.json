@@ -1,0 +1,68 @@
+{
+    "doctype": "DocType",
+    "name": "Loan",
+    "module": "Library Management",
+    "is_single": 0,
+    "naming_rule": "By fieldname",
+    "autoname": "field:loan_id",
+    "fields": [
+      {
+        "fieldname": "loan_id",
+        "label": "Loan ID",
+        "fieldtype": "Data",
+        "read_only": 1
+      },
+      {
+        "fieldname": "book",
+        "label": "Book",
+        "fieldtype": "Link",
+        "options": "Book",
+        "reqd": 1
+      },
+      {
+        "fieldname": "member",
+        "label": "Member",
+        "fieldtype": "Link",
+        "options": "Member",
+        "reqd": 1
+      },
+      {
+        "fieldname": "loan_date",
+        "label": "Loan Date",
+        "fieldtype": "Date",
+        "reqd": 1,
+        "default": "Today"
+      },
+      {
+        "fieldname": "return_date",
+        "label": "Return Date",
+        "fieldtype": "Date",
+        "reqd": 1
+      },
+      {
+        "fieldname": "status",
+        "label": "Status",
+        "fieldtype": "Select",
+        "options": "Active\nReturned\nOverdue",
+        "default": "Active"
+      }
+    ],
+    "permissions": [
+      {
+        "role": "Librarian",
+        "permlevel": 0,
+        "read": 1,
+        "write": 1,
+        "create": 1,
+        "delete": 1
+      },
+      {
+        "role": "Member",
+        "permlevel": 0,
+        "read": 1,
+        "write": 0,
+        "create": 0,
+        "delete": 0
+      }
+    ]
+  }

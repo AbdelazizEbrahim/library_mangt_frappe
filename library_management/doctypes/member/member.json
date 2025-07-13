@@ -1,0 +1,53 @@
+{
+    "doctype": "DocType",
+    "name": "Member",
+    "module": "Library Management",
+    "is_single": 0,
+    "naming_rule": "By fieldname",
+    "autoname": "field:membership_id",
+    "fields": [
+      {
+        "fieldname": "full_name",
+        "label": "Full Name",
+        "fieldtype": "Data",
+        "reqd": 1
+      },
+      {
+        "fieldname": "membership_id",
+        "label": "Membership ID",
+        "fieldtype": "Data",
+        "reqd": 1,
+        "unique": 1
+      },
+      {
+        "fieldname": "email",
+        "label": "Email",
+        "fieldtype": "Data",
+        "reqd": 1,
+        "unique": 1
+      },
+      {
+        "fieldname": "phone",
+        "label": "Phone",
+        "fieldtype": "Data"
+      }
+    ],
+    "permissions": [
+      {
+        "role": "Librarian",
+        "permlevel": 0,
+        "read": 1,
+        "write": 1,
+        "create": 1,
+        "delete": 1
+      },
+      {
+        "role": "Member",
+        "permlevel": 0,
+        "read": 0,
+        "write": 0,
+        "create": 0,
+        "delete": 0
+      }
+    ]
+  }

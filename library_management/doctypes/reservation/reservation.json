@@ -1,0 +1,62 @@
+{
+    "doctype": "DocType",
+    "name": "Reservation",
+    "module": "Library Management",
+    "is_single": 0,
+    "naming_rule": "By fieldname",
+    "autoname": "field:reservation_id",
+    "fields": [
+      {
+        "fieldname": "reservation_id",
+        "label": "Reservation ID",
+        "fieldtype": "Data",
+        "read_only": 1
+      },
+      {
+        "fieldname": "book",
+        "label": "Book",
+        "fieldtype": "Link",
+        "options": "Book",
+        "reqd": 1
+      },
+      {
+        "fieldname": "member",
+        "label": "Member",
+        "fieldtype": "Link",
+        "options": "Member",
+        "reqd": 1
+      },
+      {
+        "fieldname": "reservation_date",
+        "label": "Reservation Date",
+        "fieldtype": "Date",
+        "reqd": 1,
+        "default": "Today"
+      },
+      {
+        "fieldname": "status",
+        "label": "Status",
+        "fieldtype": "Select",
+        "options": "Pending\nFulfilled\nCancelled",
+        "default": "Pending"
+      }
+    ],
+    "permissions": [
+      {
+        "role": "Librarian",
+        "permlevel": 0,
+        "read": 1,
+        "write": 1,
+        "create": 1,
+        "delete": 1
+      },
+      {
+        "role": "Member",
+        "permlevel": 0,
+        "read": 1,
+        "write": 0,
+        "create": 1,
+        "delete": 0
+      }
+    ]
+  }
